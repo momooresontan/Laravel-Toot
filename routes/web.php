@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TootController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,12 +19,19 @@ Route::get('/', function () {
     return view('index');
 });
 
+//Show register page
 Route::get('/register', [UserController::class,'create']);
 
+//Create user
 Route::post('/users', [UserController::class,'store']);
 
+//Logout user
 Route::post('/logout', [UserController::class, 'logout']);
 
+//Show login page
 Route::get('/login', [UserController::class, 'login']);
 
+//Login user
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+Route::post('/create', [TootController::class, 'create']);

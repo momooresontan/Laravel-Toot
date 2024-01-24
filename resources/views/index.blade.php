@@ -7,7 +7,11 @@
     </form>
     <x-panel>
     <div class="mt-5">
-        <textarea name="body" class="w-full text-sm focus:outline-none focus:ring" rows="5" placeholder="Say something" required></textarea>
+        <h2 class="text-xl font-bold m-2">Toot something</h2>
+
+        <x-form.input name="title" placeholder="title" />
+
+        <textarea name="body" class="w-full text-sm m-2 focus:outline-none focus:ring" rows="5" placeholder="Say something" required></textarea>
         
         <x-form.error name="body"/>
     </div>
