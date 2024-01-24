@@ -31,8 +31,13 @@ class UserController extends Controller
 
     public function login(Request $request){
         $formFields = $request->validate([
-            'name' => 'required',
+            'email' => ['required', 'email'],
             'password' => ['required', 'min:6'],
         ]);
+        if( auth()->attempt($formFields) ){
+            $request->session()->regenerate();
+        }
+        return redirect('/')->with('success', 'User logged in!');
+
     }
 }
