@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Toot;
 use Illuminate\Http\Request;
 
 class TootController extends Controller
@@ -14,5 +15,10 @@ class TootController extends Controller
 
         $formFields['title'] = strip_tags($formFields['title']);
         $formFields['body'] = strip_tags($formFields['body']);
+        $formFields['user_id'] = auth()->id();
+
+        Toot::create($formFields);
+
+        return redirect('/')->with('success', 'Toot sent');
     }
 }
