@@ -20,6 +20,6 @@ class UserController extends Controller
 
         auth()->login($user);
 
-        return redirect('/');
+        return redirect('/')->with('success', 'User has been created!');
     }
 }
