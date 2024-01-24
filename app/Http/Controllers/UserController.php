@@ -28,4 +28,11 @@ class UserController extends Controller
 
         return redirect('/')->with('success', 'User logged out!');
     }
+
+    public function login(Request $request){
+        $formFields = $request->validate([
+            'name' => 'required',
+            'password' => ['required', 'min:6'],
+        ]);
+    }
 }
