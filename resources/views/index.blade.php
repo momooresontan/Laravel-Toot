@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Testing 123</h1>
+    <div style="border: 3px solid black;">
+        <h2>Register</h2>
+        <form action="">
+            <x-form.input name="name" placeholder="name" />
+            <x-form.input name="email" placeholder="email" />
+            <x-form.input name="password" type="password"  placeholder="password" />
+        </form>
+    </div>
 </body>
 </html>
