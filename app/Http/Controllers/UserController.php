@@ -22,4 +22,10 @@ class UserController extends Controller
 
         return redirect('/')->with('success', 'User has been created!');
     }
+
+    public function logout(){
+        auth()->logout();
+
+        return redirect('/')->with('success', 'User logged out!');
+    }
 }
