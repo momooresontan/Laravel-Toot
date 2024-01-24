@@ -1,7 +1,7 @@
 <x-layout>
     <x-panel>
         <h2 class="block m-2 uppercase font-bold text-xl text-gray-700">Login</h2>
-        <form method="POST" action="/login">
+        <form method="POST" action="users/authenticate">
             @csrf
             <x-form.input name="email" placeholder="email" />
             <x-form.input name="password" type="password" placeholder="password" />

@@ -1,7 +1,7 @@
 <x-layout>
     <x-panel>
         <h2 class="block m-2 uppercase font-bold text-xl text-gray-700">Register</h2>
-        <form method="POST" action="/register">
+        <form method="POST" action="/users">
             @csrf
             <x-form.input name="name" placeholder="name" />
             <x-form.input name="email" placeholder="email" />
