@@ -31,4 +31,10 @@ class TootController extends Controller
 
         return view('index', ['toots' => $toots]);
     }
+
+    public function show(Toot $toot){
+        return view('toots.edit', [
+            'toot' => $toot
+        ]);
+    }
 }
