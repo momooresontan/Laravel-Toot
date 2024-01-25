@@ -3,7 +3,7 @@
     <p>Congrats you are logged in</p>
     <form method="POST" action="/logout">
         @csrf
-        <x-form.button name="logout" />
+        <x-form.button>logout</x-form.button>
     </form>
     <x-panel>
     <div class="mt-5">
@@ -14,7 +14,7 @@
             <textarea name="body" class="w-full text-sm m-2 focus:outline-none focus:ring" rows="5" placeholder="Say something" required></textarea>
             <x-form.error name="body"/>
             <div class="flex justify-end mt-5 border-t border-gray-200 pt-3 ">
-                <x-form.button name="toot"></x-form.button>
+                <x-form.button>Toot</x-form.button>
             </div>
         </form>
     </div>
@@ -57,7 +57,7 @@
             @csrf
             <x-form.input name="email" placeholder="email" />
             <x-form.input name="password" type="password"  placeholder="password" />
-            <x-form.button name="login" />
+            <x-form.button>login</x-form.button>
 
             <div class="mt-8">
                 <p>

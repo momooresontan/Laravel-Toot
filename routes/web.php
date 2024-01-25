@@ -37,3 +37,6 @@ Route::post('/create', [TootController::class, 'create']);
 
 //Edit toot page
 Route::get('/toots/{toot}/edit', [TootController::class, 'show']);
+
+//Update toot
+Route::patch('/toots/{toot}/edit', [TootController::class, 'update']);

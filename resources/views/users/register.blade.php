@@ -6,7 +6,7 @@
             <x-form.input name="name" placeholder="name" />
             <x-form.input name="email" placeholder="email" />
             <x-form.input name="password" type="password" placeholder="password" />
-            <x-form.button name="register" />
+            <x-form.button>Register</x-form.button>
 
             <div class="mt-8">
                 <p>

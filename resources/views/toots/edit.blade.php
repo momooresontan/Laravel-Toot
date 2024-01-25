@@ -12,7 +12,7 @@
             </textarea>
             <x-form.error name="body"/>
             <div class="flex justify-end mt-5 border-t border-gray-200 pt-3 ">
-                <x-form.button name="toot"></x-form.button>
+                <x-form.button>Update toot</x-form.button>
             </div>
         </form>
     </div>
