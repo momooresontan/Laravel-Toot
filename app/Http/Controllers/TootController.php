@@ -33,12 +33,34 @@ class TootController extends Controller
     }
 
     public function show(Toot $toot){
+        if(auth()->user()->id !== $toot['user_id']){
+            return redirect('/');
+        }
         return view('toots.edit', [
             'toot' => $toot
         ]);
     }
 
     public function update(Toot $toot, Request $request){
-        $formFields = [];
+        if(auth()->user()->id !== $toot['user_id']){
+            return redirect('/');
+        }
+        $formFields = $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+        $formFields['title'] = strip_tags($formFields['title']);
+        $formFields['body'] = strip_tags($formFields['body']);
+
+        $toot->update($formFields);
+        return redirect('/')->with('success', 'Toot updated!');
+    }
+
+    public function destroy(Toot $toot){
+        if(auth()->user()->id === $toot['user_id']){
+            $toot->delete();
+        }
+        
+        return redirect('/')->with('success','Toot deleted!');
     }
 }

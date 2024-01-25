@@ -7,9 +7,6 @@
             @method('PUT')
             <x-form.input name="title" :value="old('title', $toot->title)" />
             <x-form.textarea name="body" rows="5" placeholder="Say something">{{ old('body', $toot->body) }}</x-form.textarea>
-            <textarea name="body" class="w-full text-sm m-2 focus:outline-none focus:ring" rows="5" required>
-
-            </textarea>
             <x-form.error name="body"/>
             <div class="flex justify-end mt-5 border-t border-gray-200 pt-3 ">
                 <x-form.button>Update toot</x-form.button>

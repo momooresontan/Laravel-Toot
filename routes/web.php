@@ -39,4 +39,7 @@ Route::post('/create', [TootController::class, 'create']);
 Route::get('/toots/{toot}/edit', [TootController::class, 'show']);
 
 //Update toot
-Route::patch('/toots/{toot}/edit', [TootController::class, 'update']);
+Route::put('/toots/{toot}/edit', [TootController::class, 'update']);
+
+//Delete toot
+Route::delete('/toots/{toot}', [TootController::class, 'destroy']);
