@@ -23,7 +23,12 @@ class TootController extends Controller
     }
 
     public function index(){
-        $toots = Toot::all();
+        //$toots = Toot::where('user_id', auth()->id())->get();
+        $toots = [];
+        if(auth()->check()){
+            $toots = auth()->user()->toots()->latest()->get();
+        }
+
         return view('index', ['toots' => $toots]);
     }
 }

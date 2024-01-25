@@ -28,7 +28,6 @@
             <h3 class="text-2xl">
                 <a href="/toot/{{ $toot->id }}">{{ $toot->title }}</a>
             </h3>
-            <h4>{{ $toot->user_id['name'] }}</h4>
             <div class="text-xl font-bold mb-4">{{ $toot->body }}</div>
         </div>
         @endforeach
