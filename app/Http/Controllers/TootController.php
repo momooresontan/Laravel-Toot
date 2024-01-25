@@ -37,4 +37,8 @@ class TootController extends Controller
             'toot' => $toot
         ]);
     }
+
+    public function update(Toot $toot, Request $request){
+        $formFields = [];
+    }
 }
