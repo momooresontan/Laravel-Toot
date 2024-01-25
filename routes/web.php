@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [TootController::class, 'index']);
 
 //Show register page
 Route::get('/register', [UserController::class,'create']);
