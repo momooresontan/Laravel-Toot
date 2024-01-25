@@ -28,6 +28,19 @@
             <h3 class="text-2xl">
                 <a href="/toot/{{ $toot->id }}">{{ $toot->title }}</a>
             </h3>
+            <p>
+                <a href="/toots/{{$toot->id}}/edit" class="text-blue-400 px-6 py-2 rounded-xl">
+                <i class="fa-solid fa-pen-to-square"></i>
+                Edit</a>
+                <form method="POST" action="/toots/{{ $toot->id }}">
+                    @csrf
+                    @method('DELETE')
+                    <button class="text-red-600">
+                        <i class="fa-solid fa-trash-can"></i>
+                        Delete
+                    </button>
+                </form>
+            </p>
             <div class="text-xl font-bold mb-4">{{ $toot->body }}</div>
         </div>
         @endforeach

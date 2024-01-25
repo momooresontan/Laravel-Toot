@@ -34,3 +34,6 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 //Create new toot
 Route::post('/create', [TootController::class, 'create']);
+
+//Edit toot page
+Route::
