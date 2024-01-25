@@ -20,6 +20,24 @@
     </div>
     </x-panel>
 
+    <x-panel>
+        @unless(count($toots) == 0)
+        <h2 class="text-xl font-bold m-2">All toots</h2>
+        @foreach($toots as $toot)
+        <div>
+            <h3 class="text-2xl">
+                <a href="/toot/{{ $toot->id }}">{{ $toot->title }}</a>
+            </h3>
+            <div class="text-xl font-bold mb-4">{{ $toot->body }}</div>
+        </div>
+        @endforeach
+
+        @else
+        <p>No Toots</p>
+        @endunless
+
+    </x-panel>
+
     @else
     <x-panel>
         <h2 class="block m-2 uppercase font-bold text-xl text-gray-700">Login</h2>
