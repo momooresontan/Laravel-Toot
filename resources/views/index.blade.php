@@ -26,7 +26,7 @@
         @foreach($toots as $toot)
         <div>
             <h3 class="text-2xl">
-                <a href="/toot/{{ $toot->id }}">{{ $toot->title }}</a>
+                <a href="/toot/{{ $toot->id }}">{{ $toot->title }}</a> by <span>{{ $toot->user->name }}</span>
             </h3>
             <p>
                 <a href="/toots/{{$toot->id}}/edit" class="text-blue-400 px-6 py-2 rounded-xl">
