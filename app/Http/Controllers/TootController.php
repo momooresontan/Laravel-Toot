@@ -21,4 +21,9 @@ class TootController extends Controller
 
         return redirect('/')->with('success', 'Toot sent');
     }
+
+    public function index(){
+        $toots = Toot::all();
+        return view('index', ['toots' => $toots]);
+    }
 }
